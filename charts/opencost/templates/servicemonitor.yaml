@@ -12,6 +12,7 @@ metadata:
       {{- toYaml .Values.opencost.metrics.serviceMonitor.additionalLabels | nindent 4 }}
     {{- end }}
 spec:
+  jobLabel: {{ .Values.opencost.metrics.serviceMonitor.jobLabel }}
   endpoints:
     - port: http
       scheme: {{ .Values.opencost.metrics.serviceMonitor.scheme }}
